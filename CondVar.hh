@@ -1,3 +1,6 @@
+#ifndef CONDVAR_HH
+# define CONDVAR_HH
+
 #include <pthread.h>
 
 class 	CondVar
@@ -12,3 +15,5 @@ public:
 	int	signal();
 	int	wait(pthread_mutex *);
 };
+
+#endif //!CONDVAR_HH

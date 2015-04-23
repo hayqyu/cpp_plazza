@@ -1,3 +1,6 @@
+#ifndef MUTEX_HH
+# define MUTEX_HH
+
 #include "Mutex.hh"
 
 class ScopedLock
@@ -8,3 +11,5 @@ public:
 	ScopedLock(Mutex const &);
 	~ScopedLock();
 };
+
+#endif //!MUTEX_HH
