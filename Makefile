@@ -6,23 +6,27 @@ NAME		=	plazza
 
 RM		=	rm -f
 
-SRC		=	CondVar.cpp \
-			Error.cpp \
-			Kitchen.cpp \
-			main.cpp \
-			Mutex.cpp \
-			Reception.cpp \
-			ScopedLock.cpp
+INCLUDE		=	-Iincludes/
 
-OBJ	=		$(SRC:.cpp=.o)
+SRC		=	src/CondVar.cpp \
+			src/Error.cpp \
+			src/main.cpp \
+			src/Mutex.cpp \
+			src/Reception.cpp \
+			src/MyThread.cpp \
+			src/Cooks.cpp \
+			src/ScopedLock.cpp
+#			src/Kitchen.cpp \
+
+OBJ		=	$(SRC:.cpp=.o)
 
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
-			$(CC) $(OBJ) $(NAME)
+			$(CC) $(OBJ) -o $(NAME) -pthread
 
 %.o:			%.cpp
-			$(CC) $(CXXFLAGS) -o $@ -c $<
+			$(CC) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
 clean:
 			$(RM) $(OBJ)

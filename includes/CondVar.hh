@@ -2,18 +2,19 @@
 # define CONDVAR_HH
 
 #include <pthread.h>
+#include "Mutex.hh"
 
-class 	CondVar
+class 	CondVar : public Mutex
 {
 private:
-	pthread_cond_t	*_cond;
+	pthread_cond_t	_cond;
 public:
 	CondVar();
 	~CondVar();
 public:
 	int	broadcast();
 	int	signal();
-	int	wait(pthread_mutex *);
+	int	wait();
 };
 
 #endif //!CONDVAR_HH

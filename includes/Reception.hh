@@ -1,5 +1,5 @@
 #ifndef RECEPTION_HH
-#define RECEPTION_HH
+# define RECEPTION_HH
 
 
 class Reception
@@ -11,6 +11,7 @@ private:
 public:
     Reception(int ,int ,int);
     ~Reception();
+    void 	print();
 };
 
 #endif //RECEPTION_HH

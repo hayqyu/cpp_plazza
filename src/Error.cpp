@@ -19,3 +19,13 @@ const char  *Error::what() const throw()
 {
     return (_message.c_str());
 }
+
+ArgError::ArgError(std::string const &message, std::string const &name)
+:	Error(message, name)
+{
+}
+
+ThreadError::ThreadError(std::string const &message, std::string const &name)
+:	Error(message, name)
+{
+}

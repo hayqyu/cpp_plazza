@@ -5,6 +5,7 @@
 
 class Mutex
 {
+protected:
 	pthread_mutex_t			_mutex;
 public:
 	Mutex();

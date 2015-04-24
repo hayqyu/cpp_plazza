@@ -1,3 +1,6 @@
+#ifndef KITCHEN_HH
+# define KITCHEN_HH
+
 class Kitchen
 {
 private:
@@ -6,3 +9,5 @@ public:
 	Kitchen(int);
 	~Kitchen();
 };
+
+#endif //!KITCHEN_HH
