@@ -1,8 +1,8 @@
 #include "CondVar.hh"
 
-CondVar::CondVar()
+CondVar::CondVar(Mutex *mutex)
 {
-	pthread_cond_init(_cond, );
+	pthread_cond_init(_cond, mutex->getMutex());
 }
 
 CondVar::~CondVar()
@@ -20,7 +20,7 @@ int CondVar::signal()
 	return (pthread_cond_signal(_cond));
 }
 
-int CondVar::wait(pthread_mutex_t *mutex)
+int CondVar::wait(Mutex *mutex)
 {
-	return (pthread_cond_wait(_cond, mutex));
+	return (pthread_cond_wait(_cond, mutex->getMutex()));
 }

@@ -10,6 +10,11 @@ Mutex::~Mutex()
 	pthread_mutex_destroy(_mutex);
 }
 
+pthread_mutex_t const	*getMutex()
+{
+	return (_mutex);
+}
+
 int	Mutex::lock()
 {
 	return (pthread_mutex_lock(_mutex));
